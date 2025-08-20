@@ -34,16 +34,15 @@ class TreeViewModel(private val treeStorage: TreeStorage) : ViewModel() {
                         _rootNode.value = root
                         _currentNode.value = root
                     } else {
-                        // Если JSON пустой, создаем новый корневой узел
+
                         val newRoot = Node()
                         _rootNode.value = newRoot
                         _currentNode.value = newRoot
                     }
                 } catch (e: Exception) {
-                    // Логирование ошибки
+
                     Log.e("TreeViewModel", "Error parsing JSON", e)
 
-                    // Создаем новый корневой узел в случае ошибки
                     val newRoot = Node()
                     _rootNode.value = newRoot
                     _currentNode.value = newRoot
@@ -68,7 +67,7 @@ class TreeViewModel(private val treeStorage: TreeStorage) : ViewModel() {
     }
 
     private fun updateTreeState(focusNode: Node) {
-        // Создаем новую копию корневого узла для триггера обновления
+
         _rootNode.value = copyNode(_rootNode.value)
         _currentNode.value = focusNode
         saveTree()

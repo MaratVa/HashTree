@@ -20,7 +20,7 @@ data class Node(
                 val last20Bytes = hash.takeLast(20).toByteArray()
                 last20Bytes.joinToString("") { "%02x".format(it) }
             } catch (e: NoSuchAlgorithmException) {
-                // Резервный механизм генерации имени
+
                 input.takeLast(20)
             }
         }

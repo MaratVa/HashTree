@@ -41,7 +41,7 @@ fun NodeScreen(
         }
     ) { padding ->
         if (node.children.isEmpty()) {
-            // Состояние, когда нет дочерних узлов
+
             Box(
                 modifier = Modifier
                     .fillMaxSize()
